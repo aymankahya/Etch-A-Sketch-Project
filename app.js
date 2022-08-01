@@ -28,8 +28,8 @@ Etch a sketch Project
 */
 
 const parentNode = document.querySelector('#canvas');
-const canvasHeight = parseInt(getComputedStyle(parentNode).height);
-const canvasWidth = parseInt(getComputedStyle(parentNode).width);
+const canvasHeight = 500;
+const canvasWidth = 500;
 
 function createColumn(){
 
