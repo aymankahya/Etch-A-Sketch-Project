@@ -88,7 +88,7 @@ function generateCanvas(size){
 
 
 
-generateCanvas(2);
+generateCanvas(100);
 
 let mouseDown = false;
 let mouseUp = true;
