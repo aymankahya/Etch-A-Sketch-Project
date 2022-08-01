@@ -58,7 +58,7 @@ function populateColumn(size){
         childNode.classList.add('box');
         let height = canvasHeight / size;
         let width = canvasWidth / size;
-        console.log(`height : ${height}\nwidth : ${width}`);
+        console.log(`canvas height : ${canvasHeight}\ncanvas width : ${canvasWidth}\nheight : ${height}\nwidth : ${width}`);
         childNode.setAttribute('style',`border: 0px solid white; height: ${height}px; width: ${width}px`);
         parentNode.lastElementChild.appendChild(childNode);  // Parent node in this function, AKA last created column
         childNode.addEventListener('mouseover', function(){
