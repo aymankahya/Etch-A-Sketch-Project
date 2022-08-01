@@ -28,6 +28,8 @@ Etch a sketch Project
 */
 
 const parentNode = document.querySelector('#canvas');
+const canvasHeight = parseInt(getComputedStyle(parentNode).height);
+const canvasWidth = parseInt(getComputedStyle(parentNode).width);
 
 function createColumn(){
 
@@ -49,8 +51,7 @@ function populateColumn(size){
             +  number of boxes generated = n = gridHeight / gridSize
     */
    
-    const canvasHeight = parseInt(getComputedStyle(parentNode).height);
-    const canvasWidth = parseInt(getComputedStyle(parentNode).width);
+
 
     for(let i = 1 ; i <= size; i++ ){
 
@@ -94,3 +95,4 @@ let mouseUp = true;
 
 document.body.onmousedown = (event) => {mouseDown = event.isTrusted; mouseUp = false;};
 document.body.onmouseup = (event) => {mouseUp = event.isTrusted; mouseDown = false;};
+
