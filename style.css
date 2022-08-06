@@ -2,16 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 
+
 html, body{
-    height: 100%;
+    height: fit-content;
 }
 
 body{
     background-image: linear-gradient(to right top, #08111f, #0c1626, #0e1a2d, #111f34, #14233c);
+    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 100px;
+    gap: 120px;
     justify-content: space-between;
 }
 
@@ -29,21 +31,21 @@ body{
 #title{
     font-family: VT323;
     color: rgb(215, 217, 206);
-    font-size: 80px;
-    margin-top: 50px;
+    font-size: 70px;
+    margin-top: 10px;
     letter-spacing: 8px;
 }
 
 #middle{
     display: flex;
-    gap : 150px;
+    gap : 190px;
 }
 
 #menu{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap : 50px;
+    gap : 80px;
     font-family: VT323;
     color: rgb(215, 217, 206);
     font-size: 50px;
@@ -143,8 +145,4 @@ body{
 #github{
     height: 21px;
     width: 21px;
-}
-
-footer{
-    margin-top: 45px;
 }
