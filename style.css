@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 
 html, body{
@@ -6,10 +7,11 @@ html, body{
 }
 
 body{
-    background-color: rgb(30, 30, 30);
+    background-image: linear-gradient(to right top, #08111f, #0c1626, #0e1a2d, #111f34, #14233c);
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 100px;
     justify-content: space-between;
 }
 
@@ -19,14 +21,130 @@ body{
     margin: 0;
     height: 500px;
     width: 500px;
-    border: 1px dashed white;
+    border: 10px solid rgb(215, 217, 206);
 }
 
 
 
 #title{
-    font-family: Dancing Script;
-    color: white;
-    font-size: 70px;
-    
+    font-family: VT323;
+    color: rgb(215, 217, 206);
+    font-size: 80px;
+    margin-top: 50px;
+    letter-spacing: 8px;
+}
+
+#middle{
+    display: flex;
+    gap : 150px;
+}
+
+#menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap : 50px;
+    font-family: VT323;
+    color: rgb(215, 217, 206);
+    font-size: 50px;
+}
+
+#menu-elements{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap : 50px;
+    justify-content: space-evenly;
+}
+
+#mode{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: space-between;
+    font-family: VT323;
+    font-size: 25px;
+    letter-spacing: 5px;
+    color: rgb(215, 217, 206);
+    font-weight: 900;
+}
+
+.switch input{
+    position: absolute;
+    opacity: 0;
+}
+
+.switch{
+    display: inline-block;
+    font-size: 20px; /* 1 */
+    height: 1em;
+    width: 2em;
+    background: rgb(215, 217, 206);
+    box-shadow: 0.1em 0.2em 0.2em rgb(22, 30, 62);
+    border-radius: 1em;
+}
+
+.switch div {
+    height: 1em;
+    width: 1em;
+    border-radius: 1em;
+    background: #FFF;
+    box-shadow: 0 0.1em 0.3em rgba(0,0,0,0.3);
+    -webkit-transition: all 300ms;
+       -moz-transition: all 300ms;
+            transition: all 300ms;
+  }
+
+  .switch input:checked + div {
+    background: rgb(255, 0, 0);
+    -webkit-transform: translate3d(100%, 0, 0);
+       -moz-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  } 
+
+  #reset{
+    font-size: 15px; /* 1 */
+    background: rgb(215, 217, 206);
+    border-radius: 1em;
+    border: none;
+    cursor: pointer;
+  }
+
+  #reset:hover{
+    color: rgb(255, 0, 0);
+    transition-delay: 100ms;
+  }
+
+  #slider-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  #slider-value{
+    font-family: VT323;
+    font-size: 25px;
+    color: rgb(215, 217, 206);
+  }
+
+#copyright{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+    font-family: VT323;
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: rgb(215, 217, 206);
+    font-weight: lighter;
+}
+
+#github{
+    height: 21px;
+    width: 21px;
+}
+
+footer{
+    margin-top: 45px;
 }

@@ -1,35 +1,16 @@
-/*
-
-======================
-Etch a sketch Project
-======================
-
-- Created a way to generate the grid based on the desired grid size
-    + to create a grid : 1- Create adjacent column inside a flex box   // function createColumn()
-                         2- Populate each column with the number of boxes (pixels or tiles)   //function populateColumn(size)
-
-- Add the drawing behavior :
-    + The tiles should become colored when a certain behaviour is in action
-    + The behaviour is as follows :
-         - When the user clicks and holds the mousedown state, the color changing action is possible
-         - When the user drags the mouse cursor over the tiles its color changes,
-         - Once the user releases the mousedown state the color changing function stops.
-
-
-    + Detailed description of the behaviour :
-        - (mousedown = active) and (cursor above tile = true) => changeColor();
-        - (mousedown = not active) => stop changeColor();
-
-
-- Some useful tools :
-    + onmousedown event : occurs on a press on a mouse button over an element.
-    + onmouseup event : executes a JavaScript when releasing a mouse button over a paragraph,
-
-*/
 
 const parentNode = document.querySelector('#canvas');
+const slider = document.querySelector("#slider");
+const sliderValue = document.querySelector("#slider-value");
+const colorInput = document.querySelector("#color-choice");
+const eraserToggle = document.querySelector("#eraser");
+const canvasReset = document.querySelector("#reset");
+sliderValue.innerHTML = `${slider.defaultValue}X${slider.defaultValue}`;
+var colorValue = "undefined";
+var eraserMode = false;
 const canvasHeight = 500;
 const canvasWidth = 500;
+
 
 function createColumn(){
 
@@ -64,12 +45,29 @@ function populateColumn(size){
         parentNode.lastElementChild.appendChild(childNode);  // Parent node in this function, AKA last created column
         childNode.addEventListener('mouseover', function(){
             if (mouseDown && !mouseUp){
-                childNode.style.backgroundColor = 'red';
+                if(eraserMode == false){
+                    if(colorValue == "undefined"){
+                        childNode.style.backgroundColor = 'white';
+                    }else{
+                        childNode.style.backgroundColor = colorValue;
+                    }
+                }else{
+                    childNode.style.backgroundColor = null;
+                }
+                
             }
         });
 
         childNode.addEventListener('mousedown', function(){
-                childNode.style.backgroundColor = 'red';
+            if(eraserMode == false){
+                if(colorValue == "undefined"){
+                    childNode.style.backgroundColor = 'white';
+                }else{
+                    childNode.style.backgroundColor = colorValue;
+                }
+            }else{
+                childNode.style.backgroundColor = null;
+            }
 
         });
     
@@ -86,14 +84,34 @@ function generateCanvas(size){
 }
 
 
-
-
-
-generateCanvas(100);
+generateCanvas(slider.defaultValue);
 
 let mouseDown = false;
 let mouseUp = true;
 
 document.body.onmousedown = (event) => {mouseDown = event.isTrusted; mouseUp = false;};
 document.body.onmouseup = (event) => {mouseUp = event.isTrusted; mouseDown = false;};
+
+
+slider.addEventListener('change' , function(){
+    console.log(slider.value);
+    sliderValue.innerHTML = `${slider.value}X${slider.value}`;
+    parentNode.innerHTML = "";
+    generateCanvas(slider.value);
+
+});
+
+
+colorInput.addEventListener('input' , function(){
+    colorValue = colorInput.value;
+})
+
+eraserToggle.addEventListener('change', function(){
+    eraserMode = eraserToggle.checked;
+})
+
+canvasReset.addEventListener('click', function(){
+    parentNode.innerHTML = "";
+    generateCanvas(slider.value);
+})
 

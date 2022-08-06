@@ -9,13 +9,64 @@
 
     <body>
 
-        <div id="title">Etch-a-sketch</div>
+        <div id="title">ETCH-A-SKETCH</div>
         
-        <div id="canvas">
+        <div id="middle">
+
+            <div id="menu">
+                Drawing Menu
+
+                <div id="menu-elements">
+
+                    <div id="mode">
+                        Size
+                        <div id="slider-container">
+                            <div id="slider-value"></div>
+                            <input id="slider" type="range" value="24" min="2" step="2" max="50">
+                            
+                        </div>
+                        
+                    </div>
+                    
+                    <div id="mode">
+                        Color
+                        <input type="color" id="color-choice">
+                    </div>
+
+                    <div id="mode">
+                        Eraser
+                        
+                        <div class="toggle-container">
+                            <label class="switch">
+                                <input id="eraser" type="checkbox"> <div></div>
+                            </label>
+                        </div>   
+                    </div>
+
+
+                    <div id="mode">
+                        Clear<br>canvas
+                        <button id="reset">Reset</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="canvas"></div>
 
         </div>
+
 
         <script src="app.js" defer></script>
 
     </body>
+
+    <footer>
+        <div id="copyright">
+            Website made by Ayman Kahya
+            <a href="https://github.com/aymankahya" target="_blank">
+                <img src="./images/GitHub-Mark-Light-32px.png" alt="My Github Profile" id="github">
+            </a>
+        </div>
+    </footer>
 </html>
